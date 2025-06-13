@@ -14,7 +14,6 @@ const db = new sqlite3.Database(dbPath);
 // Initialize database with tables
 const initializeDatabase = () => {
   db.serialize(() => {
-    // Create trainees table with all required fields
     db.run(`
       CREATE TABLE IF NOT EXISTS trainees (
         id INTEGER PRIMARY KEY AUTOINCREMENT,

@@ -27,7 +27,6 @@ class TraineeController {
 
   // Create new trainee
   static createTrainee(req, res) {
-    // Validate request
     if (!req.body.name) {
       return res.status(400).json({ error: 'Name is required' });
     }
@@ -46,8 +45,7 @@ class TraineeController {
   // Update trainee
   static updateTrainee(req, res) {
     const id = req.params.id;
-    
-    // Validate request
+ 
     if (!req.body.name) {
       return res.status(400).json({ error: 'Name is required' });
     }

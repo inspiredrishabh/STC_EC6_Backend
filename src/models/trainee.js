@@ -51,7 +51,11 @@ class TraineeModel {
     ];
 
     db.run(sql, params, function(err) {
-      callback(err, { id: this.lastID });
+      if (err) {
+        return callback(err, null);
+      }
+            const lastId = this && this.lastID !== undefined ? this.lastID : null;
+      callback(null, { id: lastId });
     });
   }
 
